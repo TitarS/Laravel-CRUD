@@ -1,0 +1,12 @@
+{
+    "name": "titar/library",
+    "authors": [
+        {
+            "name": "serge",
+            "email": "titar@email.ua"
+        }
+    ],
+    "require": {
+        "raveren/kint": "^1.1"
+    }
+}
