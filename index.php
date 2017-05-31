@@ -36,7 +36,7 @@ Library::getInstance(
 
 print_r(Library::getInstance());
 
-//Library::getInstance()->moveBook();
+Library::getInstance()->moveBook();
 
 //echo Library::getInstance()->getPeople()[1];
 /*
