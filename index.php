@@ -34,9 +34,9 @@ Library::getInstance(
 	'city Kyiv'
 );
 
-print_r(Library::getInstance());
+//print_r(Library::getInstance());
 
-Library::getInstance()->moveBook();
+Library::getInstance()->moveBook(0, 1, 'Introduction to OOP');
 
 //echo Library::getInstance()->getPeople()[1];
 /*
