@@ -38,7 +38,7 @@ print_r(Library::getInstance());
 
 Library::getInstance()->moveBook();
 
-//echo Library::getInstance()->getPeople()[1];
+echo Library::getInstance()->getPeople()[1];
 /*
 $library->getPeople()[1]->setName('Anastasiya Puliak');
 echo $library->getPeople()[1];
