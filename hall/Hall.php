@@ -56,8 +56,24 @@ class Hall {
 	}
 	public function issetBookByName($name) {
 		$return = false;
+		/** @var Book $book */ 
 		foreach ($this->book as $book) {
-			d($book);
+			if($book->getName() == $name) {
+				return true;
+				break;
+			}
+		}
+		return $return;
+	}
+	/*Повертаємо екзампляр книги по назві*/
+	public function getBookByName($name) {
+		$return = null;
+		/** @var Book $book */ 
+		foreach ($this->book as $key => $book) {
+			if($book->getName() == $name) {
+				$return = $this->book[$key];
+				break;
+			}
 		}
 		return $return;
 	}

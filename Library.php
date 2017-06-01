@@ -68,7 +68,7 @@ class Library {
 			echo "Хола з Id = $toHallById не існує!";
 			return;
 		}
-		if ($fromHallById == $toHallById) {
+		if ($toHallById == $fromHallById) {
 			echo "Це один і той же хол!";
 			return;
 		}
@@ -76,5 +76,16 @@ class Library {
 			echo "Книги з назвою $bookName не існує!";
 			return;
 		}
+		//Отримуємо книгу з першого залу
+		$book == $this->hall[$fromHallById]->getBookByName($bookName);
+		if($book === null) {
+			return;
+		}
+		//Добавим книгу в інший зал
+		$this->hall[$toHallById]->addBook($book);
+		//Видалити з першого залу
+		$this->hall[$fromHallById]->deleteBookByName($bookName);
+
+		return true;
 	}
 }

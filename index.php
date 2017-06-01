@@ -35,8 +35,10 @@ Library::getInstance(
 );
 
 //print_r(Library::getInstance());
+//d(Library::getInstance());
+d($book);
 
-Library::getInstance()->moveBook(0, 1, 'Introduction to OOP');
+Library::getInstance()->moveBook(0, 1, 'Now-update');
 
 //echo Library::getInstance()->getPeople()[1];
 /*
