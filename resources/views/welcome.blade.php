@@ -79,6 +79,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
+                    <a href="/toys">CRUD</a>
+                </div>
+                <div class="title m-b-md">
                     Laravel
                 </div>
 

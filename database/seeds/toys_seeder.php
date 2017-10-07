@@ -16,38 +16,31 @@ class toys_seeder extends Seeder
         $toys = array(
             array(
                 'title' => 'Toy 1',
-                'content' => 'lorem ipsum',
-                'image' => ''
+                'content' => 'lorem ipsum'
             ),
             array(
                 'title' => 'Toys 2',
-                'content' => 'laravel',
-                'image' => ''
+                'content' => 'laravel'
             ),
             array(
                 'title' => 'Post4',
-                'content' => 'phpstorm',
-                'image' => ''
+                'content' => 'phpstorm'
             ),
             array(
                 'title' => 'Post5',
-                'content' => 'LaravelCollective',
-                'image' => ''
+                'content' => 'LaravelCollective'
             ),
             array(
                 'title' => 'Post6',
-                'content' => 'Artisan',
-                'image' => ''
+                'content' => 'Artisan'
             ),
             array(
                 'title' => 'Post7',
-                'content' => 'Seeder',
-                'image' => ''
+                'content' => 'Seeder'
             ),
             array(
                 'title' => 'Post8',
-                'content' => 'Migration',
-                'image' => ''
+                'content' => 'Migration'
             )
         );
         DB::table('toys')->insert($toys);

@@ -15,4 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('index', 'ToysController@index');
+Route::get('toys', 'ToysController@index');
+
+Route::get('edit/{id}', 'ToysController@edit');
+Route::post('edit/{id}', 'ToysController@update');
+
+Route::get('create', 'ToysController@create');
+Route::post('create', 'ToysController@insert');
+
+Route::get('delete/{id}', 'ToysController@delete');
+
+Route::get('show/{id}', 'ToysController@show');
