@@ -38,6 +38,7 @@
                     @endforeach
                     </tbody>
                 </table>
+                {{ $toys->links() }}
             </div>
         </div>
     </div>

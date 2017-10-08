@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 class Toy extends Model
 {
     public static function getAll() {
-        return self::all();
+        return self::simplePaginate(3);
     }
 
     public static function remove($id) {

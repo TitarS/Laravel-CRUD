@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Toy;
 use Illuminate\Http\Request;
 
+
 class ToysController extends Controller
 {
     public function index() {
