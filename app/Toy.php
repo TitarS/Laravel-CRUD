@@ -8,11 +8,18 @@ use Illuminate\Support\Facades\Storage;
 class Toy extends Model
 {
     public static function getAll() {
-        return self::simplePaginate(3);
+        return self::simplePaginate(4);
     }
 
-    public static function remove($id) {
-        Toy::find($id)->delete();
+    public function remove() {
+        $this->deleteImage();
+        $this->delete();
+    }
+
+    public function deleteImage() {
+        if($this->image != NULL) {
+            Storage::delete('uploads/'. $this->image);
+        }
     }
 
     public static function add($title, $content) {
@@ -34,25 +41,10 @@ class Toy extends Model
         if($file == NULL) {
             return;
         }
+        $this->deleteImage();
         $imageName = str_random(10) . '.' . $file->getClientOriginalExtension();
         $file->storeAs('uploads/', $imageName);
         $this->image = $imageName;
         $this->save();
     }
-
-    public static function deleteImage($id) {
-        $toy = Toy::find($id);
-        $image = $toy->image;
-        if($image !== NULL) {
-            Storage::delete('uploads/'. $image);
-            $toy->image = NULL;
-            $toy->save();
-        }
-    }
-
-    public function changeImage($id, $image) {
-        Toy::deleteImage($id);
-        $this->uploadImage($image);
-    }
-
 }

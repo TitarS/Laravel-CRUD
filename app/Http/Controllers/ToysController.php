@@ -21,8 +21,7 @@ class ToysController extends Controller
     }
 
     public function delete($id) {
-        Toy::deleteImage($id);
-        Toy::remove($id);
+        Toy::find($id)->remove();
 
         return redirect('toys');
     }
@@ -61,7 +60,9 @@ class ToysController extends Controller
             $request->get('title'),
             $request->get('content')
         );
-        $toy->changeImage($id, $request->file('image'));
+        $toy->uploadImage(
+            $request->file('image')
+        );
 
         return redirect('toys');
     }
